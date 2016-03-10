@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "50D7C3F045274C1BDE75F3D0DFDC93D627E11650",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "50D7C3F045274C1BDE75F3D0DFDC93D627E11650" : 0,
+    "FDB106BAA1D451751E3685826ECA738827208C95" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "2E655C9D-C872-4B5A-9152-FFE8C5447C23",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "50D7C3F045274C1BDE75F3D0DFDC93D627E11650" : "Giggle",
+    "FDB106BAA1D451751E3685826ECA738827208C95" : "SimpleKit"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Giggle",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Giggle.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ZacAdams89\/Giggle.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "50D7C3F045274C1BDE75F3D0DFDC93D627E11650"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ZacAdams89\/SimpleKit.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "FDB106BAA1D451751E3685826ECA738827208C95"
+    }
+  ]
+}

@@ -21,7 +21,6 @@ class VideoTableViewCell: UITableViewCell {
         }
     }
     
-    
 // MARK:- UI
     
     let videoContentView:VideoContentView = VideoContentView();
@@ -31,12 +30,14 @@ class VideoTableViewCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier);
         
+        videoContentView.videoContentMode = .Cell
         self.contentView .addSubview(self.videoContentView);
+        self.contentView.fill()
         self.backgroundColor = UIColor.clearColor();
         
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder);
     }
     
@@ -46,8 +47,6 @@ class VideoTableViewCell: UITableViewCell {
     
     
     override func layoutSubviews() {
-    
         self.videoContentView .fill();
-        
     }
 }

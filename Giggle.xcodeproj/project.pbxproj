@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B219ABF11B942706000F17AB /* NSFetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B219ABF01B942706000F17AB /* NSFetchedResultsController.swift */; };
+		B219ABF31B946083000F17AB /* SimpleKitFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B219ABF21B946083000F17AB /* SimpleKitFoundation.swift */; };
 		B248E88D1B8A9C0000EBF830 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248E88C1B8A9C0000EBF830 /* VideoView.swift */; };
 		B248E88F1B8A9C5600EBF830 /* VideoContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248E88E1B8A9C5600EBF830 /* VideoContentView.swift */; };
 		B248E8911B8A9D0700EBF830 /* CurrentlyPlayingVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248E8901B8A9D0700EBF830 /* CurrentlyPlayingVideoView.swift */; };
-		B248E8931B8ADAC100EBF830 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248E8921B8ADAC100EBF830 /* DataSource.swift */; };
 		B248E8FD1B8BCEA400EBF830 /* CoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248E8F11B8BCEA400EBF830 /* CoreDataStore.swift */; };
 		B248E8FE1B8BCEA400EBF830 /* NSFetchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248E8F21B8BCEA400EBF830 /* NSFetchRequest.swift */; };
 		B248E8FF1B8BCEA400EBF830 /* NSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248E8F31B8BCEA400EBF830 /* NSManagedObject.swift */; };
@@ -19,18 +20,18 @@
 		B248E9031B8BCEA400EBF830 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248E8F91B8BCEA400EBF830 /* CGRect.swift */; };
 		B248E9041B8BCEA400EBF830 /* UIEdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248E8FA1B8BCEA400EBF830 /* UIEdgeInsets.swift */; };
 		B248E9051B8BCEA400EBF830 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248E8FB1B8BCEA400EBF830 /* UIView.swift */; };
-		B248E9071B8BDBFD00EBF830 /* GiggleCoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248E9061B8BDBFD00EBF830 /* GiggleCoreDataStore.swift */; };
 		B248E90C1B8BDF7D00EBF830 /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248E90B1B8BDF7D00EBF830 /* NSObject.swift */; };
 		B248E90E1B8BE32600EBF830 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248E90D1B8BE32600EBF830 /* Singleton.swift */; };
-		B248E9121B8D726300EBF830 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248E9111B8D726300EBF830 /* Video.swift */; };
-		B248E9141B8D728900EBF830 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248E9131B8D728900EBF830 /* Video.swift */; };
+		B248E9161B8E5D1700EBF830 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248E9151B8E5D1700EBF830 /* Video.swift */; };
+		B248E9181B8E5D1800EBF830 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248E9171B8E5D1800EBF830 /* Playlist.swift */; };
+		B2939CAC1B9EA44B00D6E497 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2939CAB1B9EA44B00D6E497 /* DataSource.swift */; };
 		B2A0AAA81B84ACAF0053104A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2A0AAA71B84ACAF0053104A /* AVFoundation.framework */; };
 		B2A0AAAC1B84ACEB0053104A /* VideoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A0AAAB1B84ACEB0053104A /* VideoDataSource.swift */; };
 		B2A0AAB01B85226D0053104A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A0AAAF1B85226D0053104A /* Colors.swift */; };
 		B2A0AAB21B8523460053104A /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A0AAB11B8523460053104A /* VideoTableViewCell.swift */; };
 		B2F4B5A51B84476400B9C60B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F4B5A41B84476400B9C60B /* AppDelegate.swift */; };
 		B2F4B5A81B84476400B9C60B /* Giggle.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B2F4B5A61B84476400B9C60B /* Giggle.xcdatamodeld */; };
-		B2F4B5AA1B84476400B9C60B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F4B5A91B84476400B9C60B /* ViewController.swift */; };
+		B2F4B5AA1B84476400B9C60B /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F4B5A91B84476400B9C60B /* PlaylistViewController.swift */; };
 		B2F4B5AD1B84476400B9C60B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2F4B5AB1B84476400B9C60B /* Main.storyboard */; };
 		B2F4B5AF1B84476400B9C60B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2F4B5AE1B84476400B9C60B /* Images.xcassets */; };
 		B2F4B5B21B84476400B9C60B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2F4B5B01B84476400B9C60B /* LaunchScreen.xib */; };
@@ -61,10 +62,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B219ABF01B942706000F17AB /* NSFetchedResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSFetchedResultsController.swift; sourceTree = "<group>"; };
+		B219ABF21B946083000F17AB /* SimpleKitFoundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleKitFoundation.swift; sourceTree = "<group>"; };
 		B248E88C1B8A9C0000EBF830 /* VideoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		B248E88E1B8A9C5600EBF830 /* VideoContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoContentView.swift; sourceTree = "<group>"; };
 		B248E8901B8A9D0700EBF830 /* CurrentlyPlayingVideoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentlyPlayingVideoView.swift; sourceTree = "<group>"; };
-		B248E8921B8ADAC100EBF830 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		B248E8F11B8BCEA400EBF830 /* CoreDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStore.swift; sourceTree = "<group>"; };
 		B248E8F21B8BCEA400EBF830 /* NSFetchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSFetchRequest.swift; sourceTree = "<group>"; };
 		B248E8F31B8BCEA400EBF830 /* NSManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObject.swift; sourceTree = "<group>"; };
@@ -74,11 +76,11 @@
 		B248E8F91B8BCEA400EBF830 /* CGRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRect.swift; sourceTree = "<group>"; };
 		B248E8FA1B8BCEA400EBF830 /* UIEdgeInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIEdgeInsets.swift; sourceTree = "<group>"; };
 		B248E8FB1B8BCEA400EBF830 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
-		B248E9061B8BDBFD00EBF830 /* GiggleCoreDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiggleCoreDataStore.swift; sourceTree = "<group>"; };
 		B248E90B1B8BDF7D00EBF830 /* NSObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
 		B248E90D1B8BE32600EBF830 /* Singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
-		B248E9111B8D726300EBF830 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Video.swift; path = DataModel/Video.swift; sourceTree = "<group>"; };
-		B248E9131B8D728900EBF830 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Video.swift; path = DataModel/Video.swift; sourceTree = "<group>"; };
+		B248E9151B8E5D1700EBF830 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Video.swift; path = DataModel/Video.swift; sourceTree = "<group>"; };
+		B248E9171B8E5D1800EBF830 /* Playlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Playlist.swift; path = DataModel/Playlist.swift; sourceTree = "<group>"; };
+		B2939CAB1B9EA44B00D6E497 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataSource.swift; path = ../../SimpleKit/SimpleKit/Core/DataSource.swift; sourceTree = "<group>"; };
 		B2A0AAA71B84ACAF0053104A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		B2A0AAAB1B84ACEB0053104A /* VideoDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoDataSource.swift; sourceTree = "<group>"; };
 		B2A0AAAF1B85226D0053104A /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -87,14 +89,13 @@
 		B2F4B5A31B84476400B9C60B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2F4B5A41B84476400B9C60B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2F4B5A71B84476400B9C60B /* Giggle.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Giggle.xcdatamodel; sourceTree = "<group>"; };
-		B2F4B5A91B84476400B9C60B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B2F4B5A91B84476400B9C60B /* PlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
 		B2F4B5AC1B84476400B9C60B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B2F4B5AE1B84476400B9C60B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B2F4B5B11B84476400B9C60B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		B2F4B5B71B84476400B9C60B /* GiggleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GiggleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2F4B5BC1B84476400B9C60B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2F4B5BD1B84476400B9C60B /* GiggleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiggleTests.swift; sourceTree = "<group>"; };
-		B2F4B5F71B84605F00B9C60B /* Simplicity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Simplicity.framework; path = "../Simplicity/build/Debug-iphoneos/Simplicity.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +138,7 @@
 				B248E8F31B8BCEA400EBF830 /* NSManagedObject.swift */,
 				B248E8F41B8BCEA400EBF830 /* NSManagedObjectContext.swift */,
 				B248E8F51B8BCEA400EBF830 /* NSPredicate.swift */,
+				B219ABF01B942706000F17AB /* NSFetchedResultsController.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -163,6 +165,7 @@
 			children = (
 				B248E90B1B8BDF7D00EBF830 /* NSObject.swift */,
 				B248E90D1B8BE32600EBF830 /* Singleton.swift */,
+				B219ABF21B946083000F17AB /* SimpleKitFoundation.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -182,9 +185,10 @@
 		B2A0AAAA1B84ACC70053104A /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
-				B248E9131B8D728900EBF830 /* Video.swift */,
+				B2939CAB1B9EA44B00D6E497 /* DataSource.swift */,
+				B248E9171B8E5D1800EBF830 /* Playlist.swift */,
+				B248E9151B8E5D1700EBF830 /* Video.swift */,
 				B2A0AAAB1B84ACEB0053104A /* VideoDataSource.swift */,
-				B248E8921B8ADAC100EBF830 /* DataSource.swift */,
 			);
 			name = DataModel;
 			sourceTree = "<group>";
@@ -192,9 +196,7 @@
 		B2F4B5961B84476400B9C60B = {
 			isa = PBXGroup;
 			children = (
-				B248E9111B8D726300EBF830 /* Video.swift */,
 				B2A0AAA71B84ACAF0053104A /* AVFoundation.framework */,
-				B2F4B5F71B84605F00B9C60B /* Simplicity.framework */,
 				B2F4B5A11B84476400B9C60B /* Giggle */,
 				B2F4B5BA1B84476400B9C60B /* GiggleTests */,
 				B2F4B5A01B84476400B9C60B /* Products */,
@@ -217,8 +219,7 @@
 				B2A0AAA91B84ACC00053104A /* UI */,
 				B2F4B6211B84655200B9C60B /* Vendor */,
 				B2F4B5A41B84476400B9C60B /* AppDelegate.swift */,
-				B248E9061B8BDBFD00EBF830 /* GiggleCoreDataStore.swift */,
-				B2F4B5A91B84476400B9C60B /* ViewController.swift */,
+				B2F4B5A91B84476400B9C60B /* PlaylistViewController.swift */,
 				B2F4B5AB1B84476400B9C60B /* Main.storyboard */,
 				B2F4B5AE1B84476400B9C60B /* Images.xcassets */,
 				B2F4B5B01B84476400B9C60B /* LaunchScreen.xib */,
@@ -306,6 +307,8 @@
 		B2F4B5971B84476400B9C60B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = zacattack;
 				TargetAttributes = {
@@ -363,24 +366,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B248E8931B8ADAC100EBF830 /* DataSource.swift in Sources */,
-				B248E9071B8BDBFD00EBF830 /* GiggleCoreDataStore.swift in Sources */,
-				B2F4B5AA1B84476400B9C60B /* ViewController.swift in Sources */,
+				B2F4B5AA1B84476400B9C60B /* PlaylistViewController.swift in Sources */,
 				B248E90C1B8BDF7D00EBF830 /* NSObject.swift in Sources */,
 				B2A0AAB01B85226D0053104A /* Colors.swift in Sources */,
 				B248E8FF1B8BCEA400EBF830 /* NSManagedObject.swift in Sources */,
+				B219ABF31B946083000F17AB /* SimpleKitFoundation.swift in Sources */,
 				B248E9001B8BCEA400EBF830 /* NSManagedObjectContext.swift in Sources */,
+				B2939CAC1B9EA44B00D6E497 /* DataSource.swift in Sources */,
 				B248E88D1B8A9C0000EBF830 /* VideoView.swift in Sources */,
 				B2A0AAB21B8523460053104A /* VideoTableViewCell.swift in Sources */,
 				B248E8FE1B8BCEA400EBF830 /* NSFetchRequest.swift in Sources */,
 				B248E9041B8BCEA400EBF830 /* UIEdgeInsets.swift in Sources */,
 				B248E88F1B8A9C5600EBF830 /* VideoContentView.swift in Sources */,
-				B248E9141B8D728900EBF830 /* Video.swift in Sources */,
-				B248E9121B8D726300EBF830 /* Video.swift in Sources */,
+				B248E9161B8E5D1700EBF830 /* Video.swift in Sources */,
 				B248E8FD1B8BCEA400EBF830 /* CoreDataStore.swift in Sources */,
 				B2A0AAAC1B84ACEB0053104A /* VideoDataSource.swift in Sources */,
 				B248E8911B8A9D0700EBF830 /* CurrentlyPlayingVideoView.swift in Sources */,
 				B248E9051B8BCEA400EBF830 /* UIView.swift in Sources */,
+				B248E9181B8E5D1800EBF830 /* Playlist.swift in Sources */,
+				B219ABF11B942706000F17AB /* NSFetchedResultsController.swift in Sources */,
 				B2F4B5A81B84476400B9C60B /* Giggle.xcdatamodeld in Sources */,
 				B248E90E1B8BE32600EBF830 /* Singleton.swift in Sources */,
 				B248E9011B8BCEA400EBF830 /* NSPredicate.swift in Sources */,

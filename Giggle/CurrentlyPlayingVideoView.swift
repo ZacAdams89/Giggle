@@ -15,14 +15,36 @@ import MediaPlayer
 class CurrentlyPlayingVideoView: UIView {
     static let kCurrentlyPlayingVideoViewHeight:CGFloat = 200;
     
-    var video:Video?
+    let videoContentView = VideoContentView()
     
-    required init(coder aDecoder: NSCoder) {
+    var video:Video?{
+        didSet{
+            videoContentView.video = video
+            video?.is_playing = true
+            oldValue?.is_playing = false
+            
+            videoContentView.play()
+            
+            DataStore.save()
+        }
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder);
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame);
         self.backgroundColor = UIColor.whiteColor();
+        
+        videoContentView.videoContentMode = .Header
+        addSubview(videoContentView)
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        videoContentView.fill()
+    }
+    
 }
