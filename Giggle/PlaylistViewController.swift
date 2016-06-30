@@ -13,10 +13,13 @@ import CoreData
 
 class PlaylistViewController: UIViewController {
 
-    var videoListTableView:UITableView?;
+    var videoCollectionView:UICollectionView?;
     let currentlyPlayingVideoView:CurrentlyPlayingVideoView = CurrentlyPlayingVideoView()
     var playlist:Playlist?
     var fetchedResultsController:NSFetchedResultsController?
+
+    // Full screen tap to reveal videos
+    var revealVideosTapGestureRecogniser:UITapGestureRecognizer?;
     
 
     convenience init(playlist:Playlist){
@@ -37,7 +40,7 @@ class PlaylistViewController: UIViewController {
             // Fetch failed
         }
         
-        videoListTableView?.reloadData()
+        videoCollectionView?.reloadData()
     
     }
     
@@ -49,18 +52,25 @@ class PlaylistViewController: UIViewController {
         // Setup the video table view header
         self.currentlyPlayingVideoView.frame = CGRect(x: 0, y: 0, width: self.view.width, height: CurrentlyPlayingVideoView.kCurrentlyPlayingVideoViewHeight);
         self.view.addSubview(self.currentlyPlayingVideoView);
-
+        
+        //
+        self.revealVideosTapGestureRecogniser = UITapGestureRecognizer(target: self, action: Selector("toggleVideoPane"))
+        self.currentlyPlayingVideoView.addGestureRecognizer(self.revealVideosTapGestureRecogniser!)
         
         // Create the video table view
-        self.videoListTableView = UITableView(frame: CGRectZero, style: UITableViewStyle.Plain);
-        self.view .addSubview(self.videoListTableView!);
-        self.videoListTableView?.delegate = self;
-        self.videoListTableView?.dataSource = self;
-        self.videoListTableView?.fillWithInsets(UIEdgeInsets.topInset(self.currentlyPlayingVideoView.height));
-        self.videoListTableView?.backgroundColor = UIColor.charcoalColor();
-        self.videoListTableView?.separatorColor = UIColor.lightGrayColor();
         
-        self.videoListTableView?.registerClass(VideoTableViewCell.self, forCellReuseIdentifier: NSStringFromClass(VideoTableViewCell.self));
+        let collectionLayoutFlow = UICollectionViewFlowLayout()
+        collectionLayoutFlow.itemSize = VideoCollectionViewCell.cellSize()
+        
+        self.videoCollectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: collectionLayoutFlow)
+        self.view .addSubview(self.videoCollectionView!);
+        self.videoCollectionView?.delegate = self;
+        self.videoCollectionView?.dataSource = self;
+        self.videoCollectionView?.fillWithInsets(UIEdgeInsets.topInset(self.currentlyPlayingVideoView.height));
+        self.videoCollectionView?.backgroundColor = UIColor.charcoalColor();
+        
+//        self.videoCollectionView?.registerClass(VideoCollectionViewCell.self, forCellReuseIdentifier: NSStringFromClass(VideoCollectionViewCell.self));
+        self.videoCollectionView?.registerClass(VideoCollectionViewCell.self, forCellWithReuseIdentifier: NSStringFromClass(VideoCollectionViewCell.self))
     }
     
     
@@ -97,62 +107,60 @@ class PlaylistViewController: UIViewController {
         }
     
         // Fill the rest of the screen.
-        self.videoListTableView?.fillWithInsets(UIEdgeInsets.topInset(self.currentlyPlayingVideoView.height));
+        self.videoCollectionView?.fillWithInsets(UIEdgeInsets.topInset(self.currentlyPlayingVideoView.height));
     }
     
     
+    
+    func toggleVideoPane() -> Void{
+        
+        if(self.videoCollectionView?.y >= self.view.height){
+            // Show
+            self.videoCollectionView?.setEdge(UIViewEdge.Bottom, length: 100)
+        }
+        else{
+            // Hide
+            self.videoCollectionView?.top = self.view.bottom
+        }
+    }
 }
 
-// MARK: - UITableViewDataSource
-extension PlaylistViewController : UITableViewDataSource{
+// MARK: - UICollectionViewDataSource
+extension PlaylistViewController : UICollectionViewDataSource{
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return fetchedResultsController!.numberOfSections()
     }
     
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return fetchedResultsController!.numberOfRowsInSection(section)
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        if let cell = tableView.dequeueReusableCellWithIdentifier(NSStringFromClass(VideoTableViewCell.self)){
-            
-            configureCell(cell, atIndexPath: indexPath)
-            return cell;
-        }
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(NSStringFromClass(VideoCollectionViewCell.self), forIndexPath: indexPath)
         
-        return UITableViewCell();
+        configureCell(cell, atIndexPath: indexPath)
+        return cell;
     }
-    
     
     func configureCell(cell: AnyObject?, atIndexPath indexPath: NSIndexPath) -> Void{
         
-        if let cell = cell as? VideoTableViewCell{
+        if let cell = cell as? VideoCollectionViewCell{
             if let video = fetchedResultsController?.objectAtIndexPath(indexPath) as? Video{
                 cell.video = video
             }
-            cell.selectionStyle = UITableViewCellSelectionStyle.None;
         }
     }
 }
 
 
-// MARK: - UITableViewDelegate
-extension PlaylistViewController : UITableViewDelegate{
-    
-    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return VideoTableViewCell.kCellHeight;
-    }
-    
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return VideoTableViewCell.kCellHeight;
-    }
-    
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+// MARK: - UICollectionViewDelegate
+extension PlaylistViewController : UICollectionViewDelegate{
+
+
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if let video = fetchedResultsController?.objectAtIndexPath(indexPath) as? Video{
             currentlyPlayingVideoView.video = video
         }
@@ -164,59 +172,8 @@ extension PlaylistViewController : UITableViewDelegate{
 //MARK:- NSFetchedResultsControllerDelegate
 extension PlaylistViewController : NSFetchedResultsControllerDelegate{
     
-    func controllerWillChangeContent(controller: NSFetchedResultsController) {
-        self.videoListTableView?.beginUpdates()
-    }
-    
-    
     func controllerDidChangeContent(controller: NSFetchedResultsController) {
-        self.videoListTableView?.endUpdates()
+        self.videoCollectionView?.reloadData()
     }
-    
-    
-    func controller(controller: NSFetchedResultsController, didChangeSection sectionInfo: NSFetchedResultsSectionInfo, atIndex sectionIndex: Int, forChangeType type: NSFetchedResultsChangeType) {
-        
-        switch(type) {
-        case NSFetchedResultsChangeType.Insert:
-            videoListTableView?.insertSections(NSIndexSet(index:sectionIndex), withRowAnimation:UITableViewRowAnimation.Automatic)
-            break
-        case NSFetchedResultsChangeType.Delete:
-            videoListTableView?.deleteSections(NSIndexSet(index: sectionIndex), withRowAnimation:UITableViewRowAnimation.Automatic)
-            break
-            
-        default:
-            break
-        }
-    }
-    
-    func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
-        
-        switch(type) {
-            case NSFetchedResultsChangeType.Insert:
-                self.videoListTableView?.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: UITableViewRowAnimation.Automatic)
-                break
-            
-            case NSFetchedResultsChangeType.Delete:
-                self.videoListTableView?.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: UITableViewRowAnimation.Automatic)
-                break
-
-            case NSFetchedResultsChangeType.Update:
-                self.configureCell(self.videoListTableView?.cellForRowAtIndexPath(indexPath!), atIndexPath: indexPath!);
-                break
-
-            case NSFetchedResultsChangeType.Move:
-                self.videoListTableView?.deleteRowsAtIndexPaths([newIndexPath!], withRowAnimation: UITableViewRowAnimation.Automatic)
-                self.videoListTableView?.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: UITableViewRowAnimation.Automatic)
-                break
-            
-            default:
-                break
-        }
-
-
-        
-    }
-    
-    
 }
 

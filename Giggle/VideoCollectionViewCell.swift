@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VideoTableViewCell: UITableViewCell {
+class VideoCollectionViewCell: UICollectionViewCell {
 
     
     static let kCellHeight:CGFloat = 100;
@@ -27,14 +27,13 @@ class VideoTableViewCell: UITableViewCell {
 
 // MARK:- Functions
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier);
+     override init(frame: CGRect) {
+        super.init(frame: frame)
         
         videoContentView.videoContentMode = .Cell
         self.contentView .addSubview(self.videoContentView);
         self.contentView.fill()
         self.backgroundColor = UIColor.clearColor();
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -48,5 +47,13 @@ class VideoTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         self.videoContentView .fill();
+    }
+    
+    class func cellSize() -> CGSize{
+        let maxWidth:CGFloat = 375.0; // Iphone 6s
+        var width:CGFloat = UIScreen.mainScreen().bounds.size.width;
+        width = min(width, maxWidth)
+        
+        return CGSize(width: width, height: 100)
     }
 }

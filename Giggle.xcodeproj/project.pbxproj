@@ -28,7 +28,7 @@
 		B2A0AAA81B84ACAF0053104A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2A0AAA71B84ACAF0053104A /* AVFoundation.framework */; };
 		B2A0AAAC1B84ACEB0053104A /* VideoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A0AAAB1B84ACEB0053104A /* VideoDataSource.swift */; };
 		B2A0AAB01B85226D0053104A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A0AAAF1B85226D0053104A /* Colors.swift */; };
-		B2A0AAB21B8523460053104A /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A0AAB11B8523460053104A /* VideoTableViewCell.swift */; };
+		B2A0AAB21B8523460053104A /* VideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A0AAB11B8523460053104A /* VideoCollectionViewCell.swift */; };
 		B2F4B5A51B84476400B9C60B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F4B5A41B84476400B9C60B /* AppDelegate.swift */; };
 		B2F4B5A81B84476400B9C60B /* Giggle.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B2F4B5A61B84476400B9C60B /* Giggle.xcdatamodeld */; };
 		B2F4B5AA1B84476400B9C60B /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F4B5A91B84476400B9C60B /* PlaylistViewController.swift */; };
@@ -84,7 +84,7 @@
 		B2A0AAA71B84ACAF0053104A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		B2A0AAAB1B84ACEB0053104A /* VideoDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoDataSource.swift; sourceTree = "<group>"; };
 		B2A0AAAF1B85226D0053104A /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		B2A0AAB11B8523460053104A /* VideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
+		B2A0AAB11B8523460053104A /* VideoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewCell.swift; sourceTree = "<group>"; };
 		B2F4B59F1B84476400B9C60B /* Giggle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Giggle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2F4B5A31B84476400B9C60B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2F4B5A41B84476400B9C60B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -175,7 +175,7 @@
 			children = (
 				B248E8901B8A9D0700EBF830 /* CurrentlyPlayingVideoView.swift */,
 				B2A0AAAF1B85226D0053104A /* Colors.swift */,
-				B2A0AAB11B8523460053104A /* VideoTableViewCell.swift */,
+				B2A0AAB11B8523460053104A /* VideoCollectionViewCell.swift */,
 				B248E88C1B8A9C0000EBF830 /* VideoView.swift */,
 				B248E88E1B8A9C5600EBF830 /* VideoContentView.swift */,
 			);
@@ -374,7 +374,7 @@
 				B248E9001B8BCEA400EBF830 /* NSManagedObjectContext.swift in Sources */,
 				B2939CAC1B9EA44B00D6E497 /* DataSource.swift in Sources */,
 				B248E88D1B8A9C0000EBF830 /* VideoView.swift in Sources */,
-				B2A0AAB21B8523460053104A /* VideoTableViewCell.swift in Sources */,
+				B2A0AAB21B8523460053104A /* VideoCollectionViewCell.swift in Sources */,
 				B248E8FE1B8BCEA400EBF830 /* NSFetchRequest.swift in Sources */,
 				B248E9041B8BCEA400EBF830 /* UIEdgeInsets.swift in Sources */,
 				B248E88F1B8A9C5600EBF830 /* VideoContentView.swift in Sources */,

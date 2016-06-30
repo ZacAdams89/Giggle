@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Giggle/PlaylistViewController.swift"
-            timestampString = "479102358.808728"
+            filePath = "Giggle/AppDelegate.swift"
+            timestampString = "479099801.039974"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "189"
-            endingLineNumber = "189"
-            landmarkName = "controller(_:didChangeSection:atIndex:forChangeType:)"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "createPlaylistFromVideosInDocumentsDirectory()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Giggle/AppDelegate.swift"
-            timestampString = "479099801.039974"
+            filePath = "Giggle/PlaylistViewController.swift"
+            timestampString = "479334690.885349"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "createPlaylistFromVideosInDocumentsDirectory()"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "toggleVideoPane()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
