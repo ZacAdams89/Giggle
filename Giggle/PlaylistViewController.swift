@@ -212,11 +212,6 @@ extension PlaylistViewController : NSFetchedResultsControllerDelegate{
             default:
                 break
         }
-
-
-        
     }
-    
-    
 }
 
