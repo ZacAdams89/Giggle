@@ -20,8 +20,8 @@ class CurrentlyPlayingVideoView: UIView {
     var video:Video?{
         didSet{
             videoContentView.video = video
-            video?.is_playing = true
-            oldValue?.is_playing = false
+            video?.isPlaying = true
+            oldValue?.isPlaying = false
             
             videoContentView.play()
             
@@ -29,15 +29,24 @@ class CurrentlyPlayingVideoView: UIView {
         }
     }
     
+    
+    var showTitle:Bool{
+        didSet{
+            self.videoContentView.showTitle = self.showTitle
+        }
+    }
+    
     required init?(coder aDecoder: NSCoder) {
+        self.showTitle = true
         super.init(coder: aDecoder);
     }
     
     override init(frame: CGRect) {
+        self.showTitle = true
         super.init(frame: frame);
-        self.backgroundColor = UIColor.whiteColor();
+        self.backgroundColor = UIColor.white;
         
-        videoContentView.videoContentMode = .Header
+        videoContentView.videoContentMode = .header
         addSubview(videoContentView)
     }
     

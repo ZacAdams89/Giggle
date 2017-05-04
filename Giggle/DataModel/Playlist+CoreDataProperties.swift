@@ -2,21 +2,38 @@
 //  Playlist+CoreDataProperties.swift
 //  
 //
-//  Created by Zac Adams on 28/09/15.
+//  Created by Zac Adams on 1/11/16.
 //
-//
-//  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
-//  to delete and recreate this implementation file for your updated model.
 //
 
 import Foundation
 import CoreData
+import Giggle
 
 extension Playlist {
 
-    @NSManaged var title: String?
-    @NSManaged var videos: NSSet?
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<Playlist> {
+        return NSFetchRequest<Playlist>(entityName: "Playlist");
+    }
 
+    @NSManaged public var title: String?
+    @NSManaged public var videos: NSSet?
 
-    
+}
+
+// MARK: Generated accessors for videos
+extension Playlist {
+
+    @objc(addVideosObject:)
+    @NSManaged public func addToVideos(_ value: Video)
+
+    @objc(removeVideosObject:)
+    @NSManaged public func removeFromVideos(_ value: Video)
+
+    @objc(addVideos:)
+    @NSManaged public func addToVideos(_ values: NSSet)
+
+    @objc(removeVideos:)
+    @NSManaged public func removeFromVideos(_ values: NSSet)
+
 }

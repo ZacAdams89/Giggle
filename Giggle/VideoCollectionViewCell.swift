@@ -30,10 +30,10 @@ class VideoCollectionViewCell: UICollectionViewCell {
      override init(frame: CGRect) {
         super.init(frame: frame)
         
-        videoContentView.videoContentMode = .Cell
+        videoContentView.videoContentMode = .cell
         self.contentView .addSubview(self.videoContentView);
         self.contentView.fill()
-        self.backgroundColor = UIColor.clearColor();
+        self.backgroundColor = UIColor.clear;
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -51,7 +51,8 @@ class VideoCollectionViewCell: UICollectionViewCell {
     
     class func cellSize() -> CGSize{
         let maxWidth:CGFloat = 375.0; // Iphone 6s
-        var width:CGFloat = UIScreen.mainScreen().bounds.size.width;
+        var width:CGFloat = UIScreen.main.bounds.size.width;
+        var height:CGFloat = UIScreen.main.bounds.size.height;
         width = min(width, maxWidth)
         
         return CGSize(width: width, height: 100)

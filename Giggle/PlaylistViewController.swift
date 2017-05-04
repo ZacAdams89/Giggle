@@ -9,6 +9,25 @@
 
 import UIKit
 import CoreData
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+fileprivate func >= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l >= r
+  default:
+    return !(lhs < rhs)
+  }
+}
 
 
 class PlaylistViewController: UIViewController {
@@ -16,7 +35,7 @@ class PlaylistViewController: UIViewController {
     var videoCollectionView:UICollectionView?;
     let currentlyPlayingVideoView:CurrentlyPlayingVideoView = CurrentlyPlayingVideoView()
     var playlist:Playlist?
-    var fetchedResultsController:NSFetchedResultsController?
+    var fetchedResultsController:NSFetchedResultsController<Video>?
 
     // Full screen tap to reveal videos
     var revealVideosTapGestureRecogniser:UITapGestureRecognizer?;
@@ -27,11 +46,12 @@ class PlaylistViewController: UIViewController {
         self.playlist = playlist
         
         // Load all of the videos into the table view
-        let fetchRequest = NSFetchRequest(entityClass: Video.self)
-        fetchRequest.setSortDescriptor(NSSortDescriptor(key: "index", ascending: true))
-        fetchRequest.predicate = NSPredicate(format: "parent_playlist == %@ && is_playing != true", playlist)
         
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest)
+        let fetchRequest = NSFetchRequest<Video>(entityClass: Video.self)
+        fetchRequest.setSortDescriptor(NSSortDescriptor(key: "index", ascending: true))
+        fetchRequest.predicate = NSPredicate(format: "parentPlaylist == %@ && isPlaying != true", playlist)
+        
+        self.fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: DefaultContext, sectionNameKeyPath: nil, cacheName: nil)
         fetchedResultsController?.delegate = self
         do{
             try self.fetchedResultsController?.performFetch()
@@ -48,13 +68,14 @@ class PlaylistViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        
         // Setup the video table view header
         self.currentlyPlayingVideoView.frame = CGRect(x: 0, y: 0, width: self.view.width, height: CurrentlyPlayingVideoView.kCurrentlyPlayingVideoViewHeight);
         self.view.addSubview(self.currentlyPlayingVideoView);
+        self.currentlyPlayingVideoView.showTitle = false
         
         //
-        self.revealVideosTapGestureRecogniser = UITapGestureRecognizer(target: self, action: Selector("toggleVideoPane"))
+        self.revealVideosTapGestureRecogniser = UITapGestureRecognizer(target: self, action: #selector(PlaylistViewController.toggleVideoPane))
+        self.revealVideosTapGestureRecogniser?.numberOfTapsRequired = 2
         self.currentlyPlayingVideoView.addGestureRecognizer(self.revealVideosTapGestureRecogniser!)
         
         // Create the video table view
@@ -62,19 +83,18 @@ class PlaylistViewController: UIViewController {
         let collectionLayoutFlow = UICollectionViewFlowLayout()
         collectionLayoutFlow.itemSize = VideoCollectionViewCell.cellSize()
         
-        self.videoCollectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: collectionLayoutFlow)
+        self.videoCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: collectionLayoutFlow)
         self.view .addSubview(self.videoCollectionView!);
         self.videoCollectionView?.delegate = self;
         self.videoCollectionView?.dataSource = self;
         self.videoCollectionView?.fillWithInsets(UIEdgeInsets.topInset(self.currentlyPlayingVideoView.height));
         self.videoCollectionView?.backgroundColor = UIColor.charcoalColor();
         
-//        self.videoCollectionView?.registerClass(VideoCollectionViewCell.self, forCellReuseIdentifier: NSStringFromClass(VideoCollectionViewCell.self));
-        self.videoCollectionView?.registerClass(VideoCollectionViewCell.self, forCellWithReuseIdentifier: NSStringFromClass(VideoCollectionViewCell.self))
+        self.videoCollectionView?.register(VideoCollectionViewCell.self, forCellWithReuseIdentifier: NSStringFromClass(VideoCollectionViewCell.self))
     }
     
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         // Play the first video in the playlist
@@ -91,13 +111,13 @@ class PlaylistViewController: UIViewController {
         
         switch(self.interfaceOrientation){
             
-            case UIInterfaceOrientation.Portrait:
+            case UIInterfaceOrientation.portrait:
                 // Compact against the top of the screen
                 self.currentlyPlayingVideoView.frame = CGRect(x: 0, y: 0, width: self.view.width, height: CurrentlyPlayingVideoView.kCurrentlyPlayingVideoViewHeight);
                 break
             
-            case UIInterfaceOrientation.LandscapeLeft: fallthrough
-            case UIInterfaceOrientation.LandscapeRight:
+            case UIInterfaceOrientation.landscapeLeft: fallthrough
+            case UIInterfaceOrientation.landscapeRight:
                 // Full screen
                 self.currentlyPlayingVideoView.frame = CGRect(x: 0, y: 0, width: self.view.width, height: self.view.height);
                 break
@@ -116,12 +136,14 @@ class PlaylistViewController: UIViewController {
         
         if(self.videoCollectionView?.y >= self.view.height){
             // Show
-            self.videoCollectionView?.setEdge(UIViewEdge.Bottom, length: 100)
+            self.videoCollectionView?.setEdge(UIViewEdge.bottom, length: 150)
         }
         else{
             // Hide
             self.videoCollectionView?.top = self.view.bottom
         }
+        
+        self.videoCollectionView?.reloadData()
     }
 }
 
@@ -129,26 +151,27 @@ class PlaylistViewController: UIViewController {
 extension PlaylistViewController : UICollectionViewDataSource{
     
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return fetchedResultsController!.numberOfSections()
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return fetchedResultsController!.numberOfRowsInSection(section)
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(NSStringFromClass(VideoCollectionViewCell.self), forIndexPath: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NSStringFromClass(VideoCollectionViewCell.self), for: indexPath)
         
         configureCell(cell, atIndexPath: indexPath)
         return cell;
     }
     
-    func configureCell(cell: AnyObject?, atIndexPath indexPath: NSIndexPath) -> Void{
+    func configureCell(_ cell: AnyObject?, atIndexPath indexPath: IndexPath) -> Void{
         
         if let cell = cell as? VideoCollectionViewCell{
-            if let video = fetchedResultsController?.objectAtIndexPath(indexPath) as? Video{
+            
+            if let video = fetchedResultsController?.object(at: indexPath){
                 cell.video = video
             }
         }
@@ -160,19 +183,17 @@ extension PlaylistViewController : UICollectionViewDataSource{
 extension PlaylistViewController : UICollectionViewDelegate{
 
 
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        if let video = fetchedResultsController?.objectAtIndexPath(indexPath) as? Video{
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let video = fetchedResultsController?.object(at: indexPath){
             currentlyPlayingVideoView.video = video
         }
     }
 }
 
-
-
 //MARK:- NSFetchedResultsControllerDelegate
 extension PlaylistViewController : NSFetchedResultsControllerDelegate{
     
-    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         self.videoCollectionView?.reloadData()
     }
 }

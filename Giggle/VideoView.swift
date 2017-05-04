@@ -19,7 +19,20 @@ class VideoView: UIView {
     
     var thumbnailImageView:UIImageView?
     var videoPlayer:MPMoviePlayerController?;
-    var video:Video?
+    var video:Video?{
+        didSet{
+            //var thumbImage: UIImage?
+            let videoUrl = URL(fileURLWithPath:self.video!.url!)
+            let asset = AVAsset(url: videoUrl)
+            let assetImgGenerate = AVAssetImageGenerator(asset: asset)
+            assetImgGenerate.appliesPreferredTrackTransform = true
+            let time = CMTimeMake(asset.duration.value / 3, asset.duration.timescale)
+            if let cgImage = try? assetImgGenerate.copyCGImage(at: time, actualTime: nil) {
+                self.thumbnailImageView?.image = UIImage(cgImage: cgImage)
+            }
+
+        }
+    }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder:aDecoder);
@@ -28,7 +41,11 @@ class VideoView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame);
         
-        self.backgroundColor = UIColor.whiteColor();
+        self.thumbnailImageView = UIImageView()
+        self.addSubview(self.thumbnailImageView!)
+        
+        
+        self.backgroundColor = UIColor.white;
     }
     
     
@@ -55,32 +72,32 @@ class VideoView: UIView {
             stopPlayingVideo()
         }
         
-        let videoUrl = NSURL(fileURLWithPath:self.video!.url)
+        let videoUrl = URL(fileURLWithPath:self.video!.url!)
+        
         
         /* Now create a new movie player using the URL */
         self.videoPlayer = MPMoviePlayerController(contentURL: videoUrl);
         
         if let player = self.videoPlayer{
             
-//            player.view.fill();
             player.setFullscreen(false, animated: false)
-            player.controlStyle = MPMovieControlStyle.None;
+            player.controlStyle = MPMovieControlStyle.embedded;
             
-            player.movieSourceType = MPMovieSourceType.File;
+            player.movieSourceType = MPMovieSourceType.file;
             
             player.prepareToPlay();
             
             /* Listen for the notification that the movie player sends us
             whenever it finishes playing */
-            NSNotificationCenter.defaultCenter().addObserver(self,
-                selector: "videoHasFinishedPlaying:",
-                name: MPMoviePlayerPlaybackDidFinishNotification,
+            NotificationCenter.default.addObserver(self,
+                selector: #selector(VideoView.videoHasFinishedPlaying(_:)),
+                name: NSNotification.Name.MPMoviePlayerPlaybackDidFinish,
                 object: nil)
             
             print("Successfully instantiated the movie player", terminator: "")
             
             /* Scale the movie player to fit the aspect ratio */
-            player.scalingMode = .AspectFill;
+            player.scalingMode = .aspectFill;
             
             self.addSubview(player.view)
             player.view.fill()
@@ -96,27 +113,27 @@ class VideoView: UIView {
     /**
     Observes when the video has finsihed paying and handles errors
     */
-    func videoHasFinishedPlaying(notification: NSNotification){
+    func videoHasFinishedPlaying(_ notification: Notification){
         
         print("Video finished playing", terminator: "")
         
         /* Find out what the reason was for the player to stop */
         let reason =
-        notification.userInfo![MPMoviePlayerPlaybackDidFinishReasonUserInfoKey]
+        (notification as NSNotification).userInfo![MPMoviePlayerPlaybackDidFinishReasonUserInfoKey]
             as! NSNumber?
         
         if let theReason = reason{
             
-            let reasonValue = MPMovieFinishReason(rawValue: theReason.integerValue)
+            let reasonValue = MPMovieFinishReason(rawValue: theReason.intValue)
             
             switch reasonValue!{
-            case .PlaybackEnded:
+            case .playbackEnded:
                 /* The movie ended normally */
                 print("Playback Ended", terminator: "")
-            case .PlaybackError:
+            case .playbackError:
                 /* An error happened and the movie ended */
                 print("Error happened", terminator: "")
-            case .UserExited:
+            case .userExited:
                 /* The user exited the player */
                 print("User exited", terminator: "")
             }
@@ -133,7 +150,7 @@ class VideoView: UIView {
     func stopPlayingVideo() {
         
         if let player = self.videoPlayer{
-            NSNotificationCenter.defaultCenter().removeObserver(self)
+            NotificationCenter.default.removeObserver(self)
             player.stop()
             player.view.removeFromSuperview()
         }

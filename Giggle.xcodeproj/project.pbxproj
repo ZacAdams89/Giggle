@@ -22,31 +22,27 @@
 		B248E9051B8BCEA400EBF830 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248E8FB1B8BCEA400EBF830 /* UIView.swift */; };
 		B248E90C1B8BDF7D00EBF830 /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248E90B1B8BDF7D00EBF830 /* NSObject.swift */; };
 		B248E90E1B8BE32600EBF830 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248E90D1B8BE32600EBF830 /* Singleton.swift */; };
-		B248E9161B8E5D1700EBF830 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248E9151B8E5D1700EBF830 /* Video.swift */; };
-		B248E9181B8E5D1800EBF830 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248E9171B8E5D1800EBF830 /* Playlist.swift */; };
-		B2939CAC1B9EA44B00D6E497 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2939CAB1B9EA44B00D6E497 /* DataSource.swift */; };
 		B2A0AAA81B84ACAF0053104A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2A0AAA71B84ACAF0053104A /* AVFoundation.framework */; };
 		B2A0AAAC1B84ACEB0053104A /* VideoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A0AAAB1B84ACEB0053104A /* VideoDataSource.swift */; };
 		B2A0AAB01B85226D0053104A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A0AAAF1B85226D0053104A /* Colors.swift */; };
 		B2A0AAB21B8523460053104A /* VideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A0AAB11B8523460053104A /* VideoCollectionViewCell.swift */; };
+		B2C044BB1D645329009D015E /* PAW Patrol S02E01 Pups Save the Penguins - Pups Save a Dolphin Pup.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B2C044A31D645329009D015E /* PAW Patrol S02E01 Pups Save the Penguins - Pups Save a Dolphin Pup.mp4 */; };
+		B2C044BC1D645329009D015E /* PAW Patrol S02E02 Pups Save the Space Alien - Pups Save a Flying Frog.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B2C044A41D645329009D015E /* PAW Patrol S02E02 Pups Save the Space Alien - Pups Save a Flying Frog.mp4 */; };
+		B2C044BD1D645329009D015E /* PAW Patrol S02E03 Pups Save Jake - Pups Save the Parade.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B2C044A51D645329009D015E /* PAW Patrol S02E03 Pups Save Jake - Pups Save the Parade.mp4 */; };
+		B2C044BE1D645329009D015E /* PAW Patrol S02E04 Pups Save the Diving Bell - Pups Save the Beavers.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B2C044A61D645329009D015E /* PAW Patrol S02E04 Pups Save the Diving Bell - Pups Save the Beavers.mp4 */; };
+		B2C044D41D64532B009D015E /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C044D31D64532B009D015E /* DataSource.swift */; };
+		B2C044D71D645E0C009D015E /* Five Little Ducks | Plus Lots More Children's Songs | 74 Minutes Compilation from LittleBabyBum!.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B2C044D51D645E0C009D015E /* Five Little Ducks | Plus Lots More Children's Songs | 74 Minutes Compilation from LittleBabyBum!.mp4 */; };
+		B2C044D81D645E0C009D015E /* Wheels On The Bus | Plus Lots More Nursery Rhymes | 54 Minutes Compilation from LittleBabyBum!.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B2C044D61D645E0C009D015E /* Wheels On The Bus | Plus Lots More Nursery Rhymes | 54 Minutes Compilation from LittleBabyBum!.mp4 */; };
+		B2C8FE341DC82734001AE880 /* Playlist+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C8FE301DC82734001AE880 /* Playlist+CoreDataClass.swift */; };
+		B2C8FE351DC82734001AE880 /* Playlist+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C8FE311DC82734001AE880 /* Playlist+CoreDataProperties.swift */; };
+		B2C8FE361DC82734001AE880 /* Video+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C8FE321DC82734001AE880 /* Video+CoreDataClass.swift */; };
+		B2C8FE371DC82734001AE880 /* Video+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C8FE331DC82734001AE880 /* Video+CoreDataProperties.swift */; };
 		B2F4B5A51B84476400B9C60B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F4B5A41B84476400B9C60B /* AppDelegate.swift */; };
 		B2F4B5A81B84476400B9C60B /* Giggle.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B2F4B5A61B84476400B9C60B /* Giggle.xcdatamodeld */; };
 		B2F4B5AA1B84476400B9C60B /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F4B5A91B84476400B9C60B /* PlaylistViewController.swift */; };
-		B2F4B5AD1B84476400B9C60B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2F4B5AB1B84476400B9C60B /* Main.storyboard */; };
 		B2F4B5AF1B84476400B9C60B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2F4B5AE1B84476400B9C60B /* Images.xcassets */; };
 		B2F4B5B21B84476400B9C60B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2F4B5B01B84476400B9C60B /* LaunchScreen.xib */; };
-		B2F4B5BE1B84476400B9C60B /* GiggleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F4B5BD1B84476400B9C60B /* GiggleTests.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		B2F4B5B81B84476400B9C60B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B2F4B5971B84476400B9C60B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B2F4B59E1B84476400B9C60B;
-			remoteInfo = Giggle;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		B2F4B6061B84624300B9C60B /* Embed Frameworks */ = {
@@ -78,22 +74,28 @@
 		B248E8FB1B8BCEA400EBF830 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		B248E90B1B8BDF7D00EBF830 /* NSObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
 		B248E90D1B8BE32600EBF830 /* Singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
-		B248E9151B8E5D1700EBF830 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Video.swift; path = DataModel/Video.swift; sourceTree = "<group>"; };
-		B248E9171B8E5D1800EBF830 /* Playlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Playlist.swift; path = DataModel/Playlist.swift; sourceTree = "<group>"; };
-		B2939CAB1B9EA44B00D6E497 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataSource.swift; path = ../../SimpleKit/SimpleKit/Core/DataSource.swift; sourceTree = "<group>"; };
 		B2A0AAA71B84ACAF0053104A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		B2A0AAAB1B84ACEB0053104A /* VideoDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoDataSource.swift; sourceTree = "<group>"; };
 		B2A0AAAF1B85226D0053104A /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		B2A0AAB11B8523460053104A /* VideoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewCell.swift; sourceTree = "<group>"; };
+		B2C044A31D645329009D015E /* PAW Patrol S02E01 Pups Save the Penguins - Pups Save a Dolphin Pup.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PAW Patrol S02E01 Pups Save the Penguins - Pups Save a Dolphin Pup.mp4"; sourceTree = "<group>"; };
+		B2C044A41D645329009D015E /* PAW Patrol S02E02 Pups Save the Space Alien - Pups Save a Flying Frog.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PAW Patrol S02E02 Pups Save the Space Alien - Pups Save a Flying Frog.mp4"; sourceTree = "<group>"; };
+		B2C044A51D645329009D015E /* PAW Patrol S02E03 Pups Save Jake - Pups Save the Parade.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PAW Patrol S02E03 Pups Save Jake - Pups Save the Parade.mp4"; sourceTree = "<group>"; };
+		B2C044A61D645329009D015E /* PAW Patrol S02E04 Pups Save the Diving Bell - Pups Save the Beavers.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PAW Patrol S02E04 Pups Save the Diving Bell - Pups Save the Beavers.mp4"; sourceTree = "<group>"; };
+		B2C044D31D64532B009D015E /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataSource.swift; path = ../../SimpleKit/SimpleKit/Core/DataSource.swift; sourceTree = "<group>"; };
+		B2C044D51D645E0C009D015E /* Five Little Ducks | Plus Lots More Children's Songs | 74 Minutes Compilation from LittleBabyBum!.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Five Little Ducks | Plus Lots More Children's Songs | 74 Minutes Compilation from LittleBabyBum!.mp4"; sourceTree = "<group>"; };
+		B2C044D61D645E0C009D015E /* Wheels On The Bus | Plus Lots More Nursery Rhymes | 54 Minutes Compilation from LittleBabyBum!.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Wheels On The Bus | Plus Lots More Nursery Rhymes | 54 Minutes Compilation from LittleBabyBum!.mp4"; sourceTree = "<group>"; };
+		B2C8FE301DC82734001AE880 /* Playlist+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Playlist+CoreDataClass.swift"; path = "DataModel/Playlist+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B2C8FE311DC82734001AE880 /* Playlist+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Playlist+CoreDataProperties.swift"; path = "DataModel/Playlist+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B2C8FE321DC82734001AE880 /* Video+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Video+CoreDataClass.swift"; path = "DataModel/Video+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B2C8FE331DC82734001AE880 /* Video+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Video+CoreDataProperties.swift"; path = "DataModel/Video+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B2F4B59F1B84476400B9C60B /* Giggle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Giggle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2F4B5A31B84476400B9C60B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2F4B5A41B84476400B9C60B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2F4B5A71B84476400B9C60B /* Giggle.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Giggle.xcdatamodel; sourceTree = "<group>"; };
 		B2F4B5A91B84476400B9C60B /* PlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
-		B2F4B5AC1B84476400B9C60B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B2F4B5AE1B84476400B9C60B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B2F4B5B11B84476400B9C60B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		B2F4B5B71B84476400B9C60B /* GiggleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GiggleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2F4B5BC1B84476400B9C60B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2F4B5BD1B84476400B9C60B /* GiggleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiggleTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,13 +106,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2A0AAA81B84ACAF0053104A /* AVFoundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B2F4B5B41B84476400B9C60B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,12 +180,27 @@
 		B2A0AAAA1B84ACC70053104A /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
-				B2939CAB1B9EA44B00D6E497 /* DataSource.swift */,
-				B248E9171B8E5D1800EBF830 /* Playlist.swift */,
-				B248E9151B8E5D1700EBF830 /* Video.swift */,
+				B2C8FE301DC82734001AE880 /* Playlist+CoreDataClass.swift */,
+				B2C8FE311DC82734001AE880 /* Playlist+CoreDataProperties.swift */,
+				B2C8FE321DC82734001AE880 /* Video+CoreDataClass.swift */,
+				B2C8FE331DC82734001AE880 /* Video+CoreDataProperties.swift */,
+				B2C044D31D64532B009D015E /* DataSource.swift */,
 				B2A0AAAB1B84ACEB0053104A /* VideoDataSource.swift */,
 			);
 			name = DataModel;
+			sourceTree = "<group>";
+		};
+		B2C044A21D645329009D015E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B2C044D51D645E0C009D015E /* Five Little Ducks | Plus Lots More Children's Songs | 74 Minutes Compilation from LittleBabyBum!.mp4 */,
+				B2C044D61D645E0C009D015E /* Wheels On The Bus | Plus Lots More Nursery Rhymes | 54 Minutes Compilation from LittleBabyBum!.mp4 */,
+				B2C044A31D645329009D015E /* PAW Patrol S02E01 Pups Save the Penguins - Pups Save a Dolphin Pup.mp4 */,
+				B2C044A41D645329009D015E /* PAW Patrol S02E02 Pups Save the Space Alien - Pups Save a Flying Frog.mp4 */,
+				B2C044A51D645329009D015E /* PAW Patrol S02E03 Pups Save Jake - Pups Save the Parade.mp4 */,
+				B2C044A61D645329009D015E /* PAW Patrol S02E04 Pups Save the Diving Bell - Pups Save the Beavers.mp4 */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		B2F4B5961B84476400B9C60B = {
@@ -207,7 +217,6 @@
 			isa = PBXGroup;
 			children = (
 				B2F4B59F1B84476400B9C60B /* Giggle.app */,
-				B2F4B5B71B84476400B9C60B /* GiggleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -215,12 +224,12 @@
 		B2F4B5A11B84476400B9C60B /* Giggle */ = {
 			isa = PBXGroup;
 			children = (
+				B2C044A21D645329009D015E /* Resources */,
 				B2A0AAAA1B84ACC70053104A /* DataModel */,
 				B2A0AAA91B84ACC00053104A /* UI */,
 				B2F4B6211B84655200B9C60B /* Vendor */,
 				B2F4B5A41B84476400B9C60B /* AppDelegate.swift */,
 				B2F4B5A91B84476400B9C60B /* PlaylistViewController.swift */,
-				B2F4B5AB1B84476400B9C60B /* Main.storyboard */,
 				B2F4B5AE1B84476400B9C60B /* Images.xcassets */,
 				B2F4B5B01B84476400B9C60B /* LaunchScreen.xib */,
 				B2F4B5A61B84476400B9C60B /* Giggle.xcdatamodeld */,
@@ -283,24 +292,6 @@
 			productReference = B2F4B59F1B84476400B9C60B /* Giggle.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B2F4B5B61B84476400B9C60B /* GiggleTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B2F4B5C41B84476400B9C60B /* Build configuration list for PBXNativeTarget "GiggleTests" */;
-			buildPhases = (
-				B2F4B5B31B84476400B9C60B /* Sources */,
-				B2F4B5B41B84476400B9C60B /* Frameworks */,
-				B2F4B5B51B84476400B9C60B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B2F4B5B91B84476400B9C60B /* PBXTargetDependency */,
-			);
-			name = GiggleTests;
-			productName = GiggleTests;
-			productReference = B2F4B5B71B84476400B9C60B /* GiggleTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -314,11 +305,8 @@
 				TargetAttributes = {
 					B2F4B59E1B84476400B9C60B = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = Z8WR2KL4W4;
-					};
-					B2F4B5B61B84476400B9C60B = {
-						CreatedOnToolsVersion = 6.4;
-						TestTargetID = B2F4B59E1B84476400B9C60B;
+						DevelopmentTeam = M5ZD86AHBS;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -336,7 +324,6 @@
 			projectRoot = "";
 			targets = (
 				B2F4B59E1B84476400B9C60B /* Giggle */,
-				B2F4B5B61B84476400B9C60B /* GiggleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -346,16 +333,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2F4B5AD1B84476400B9C60B /* Main.storyboard in Resources */,
+				B2C044BD1D645329009D015E /* PAW Patrol S02E03 Pups Save Jake - Pups Save the Parade.mp4 in Resources */,
 				B2F4B5B21B84476400B9C60B /* LaunchScreen.xib in Resources */,
 				B2F4B5AF1B84476400B9C60B /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B2F4B5B51B84476400B9C60B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				B2C044D71D645E0C009D015E /* Five Little Ducks | Plus Lots More Children's Songs | 74 Minutes Compilation from LittleBabyBum!.mp4 in Resources */,
+				B2C044BB1D645329009D015E /* PAW Patrol S02E01 Pups Save the Penguins - Pups Save a Dolphin Pup.mp4 in Resources */,
+				B2C044BE1D645329009D015E /* PAW Patrol S02E04 Pups Save the Diving Bell - Pups Save the Beavers.mp4 in Resources */,
+				B2C044D81D645E0C009D015E /* Wheels On The Bus | Plus Lots More Nursery Rhymes | 54 Minutes Compilation from LittleBabyBum!.mp4 in Resources */,
+				B2C044BC1D645329009D015E /* PAW Patrol S02E02 Pups Save the Space Alien - Pups Save a Flying Frog.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,22 +353,24 @@
 			files = (
 				B2F4B5AA1B84476400B9C60B /* PlaylistViewController.swift in Sources */,
 				B248E90C1B8BDF7D00EBF830 /* NSObject.swift in Sources */,
+				B2C8FE341DC82734001AE880 /* Playlist+CoreDataClass.swift in Sources */,
+				B2C8FE351DC82734001AE880 /* Playlist+CoreDataProperties.swift in Sources */,
 				B2A0AAB01B85226D0053104A /* Colors.swift in Sources */,
+				B2C8FE361DC82734001AE880 /* Video+CoreDataClass.swift in Sources */,
 				B248E8FF1B8BCEA400EBF830 /* NSManagedObject.swift in Sources */,
 				B219ABF31B946083000F17AB /* SimpleKitFoundation.swift in Sources */,
 				B248E9001B8BCEA400EBF830 /* NSManagedObjectContext.swift in Sources */,
-				B2939CAC1B9EA44B00D6E497 /* DataSource.swift in Sources */,
+				B2C044D41D64532B009D015E /* DataSource.swift in Sources */,
 				B248E88D1B8A9C0000EBF830 /* VideoView.swift in Sources */,
+				B2C8FE371DC82734001AE880 /* Video+CoreDataProperties.swift in Sources */,
 				B2A0AAB21B8523460053104A /* VideoCollectionViewCell.swift in Sources */,
 				B248E8FE1B8BCEA400EBF830 /* NSFetchRequest.swift in Sources */,
 				B248E9041B8BCEA400EBF830 /* UIEdgeInsets.swift in Sources */,
 				B248E88F1B8A9C5600EBF830 /* VideoContentView.swift in Sources */,
-				B248E9161B8E5D1700EBF830 /* Video.swift in Sources */,
 				B248E8FD1B8BCEA400EBF830 /* CoreDataStore.swift in Sources */,
 				B2A0AAAC1B84ACEB0053104A /* VideoDataSource.swift in Sources */,
 				B248E8911B8A9D0700EBF830 /* CurrentlyPlayingVideoView.swift in Sources */,
 				B248E9051B8BCEA400EBF830 /* UIView.swift in Sources */,
-				B248E9181B8E5D1800EBF830 /* Playlist.swift in Sources */,
 				B219ABF11B942706000F17AB /* NSFetchedResultsController.swift in Sources */,
 				B2F4B5A81B84476400B9C60B /* Giggle.xcdatamodeld in Sources */,
 				B248E90E1B8BE32600EBF830 /* Singleton.swift in Sources */,
@@ -393,33 +380,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B2F4B5B31B84476400B9C60B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B2F4B5BE1B84476400B9C60B /* GiggleTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		B2F4B5B91B84476400B9C60B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B2F4B59E1B84476400B9C60B /* Giggle */;
-			targetProxy = B2F4B5B81B84476400B9C60B /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
-		B2F4B5AB1B84476400B9C60B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B2F4B5AC1B84476400B9C60B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B2F4B5B01B84476400B9C60B /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -516,7 +479,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Roam Creative Limited";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Roam Creative Limited";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/zacadams/Development/Swift/Simplicity/build/Debug-iphoneos",
@@ -525,6 +489,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "e60397eb-0354-49ba-b186-b93f58f9628e";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -532,7 +499,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Roam Creative Limited";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Roam Creative Limited";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/zacadams/Development/Swift/Simplicity/build/Debug-iphoneos",
@@ -541,40 +509,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		B2F4B5C51B84476400B9C60B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = GiggleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Giggle.app/Giggle";
-			};
-			name = Debug;
-		};
-		B2F4B5C61B84476400B9C60B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = GiggleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Giggle.app/Giggle";
+				PROVISIONING_PROFILE = "e60397eb-0354-49ba-b186-b93f58f9628e";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -595,15 +532,6 @@
 			buildConfigurations = (
 				B2F4B5C21B84476400B9C60B /* Debug */,
 				B2F4B5C31B84476400B9C60B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B2F4B5C41B84476400B9C60B /* Build configuration list for PBXNativeTarget "GiggleTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B2F4B5C51B84476400B9C60B /* Debug */,
-				B2F4B5C61B84476400B9C60B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -15,7 +15,7 @@ class VideoDataSource: NSObject {
     
     let supportedVideoExtensions = ["mp4", "mov"]
     
-    private var videos:[Video]?
+    fileprivate var videos:[Video]?
     
     override init() {
         super.init()
@@ -35,16 +35,16 @@ class VideoDataSource: NSObject {
         // for mp4 and mov file extensions.
         NSLog("Documents directory contents")
         
-        let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        let fileManager:NSFileManager = NSFileManager.defaultManager()
+        let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        let fileManager:FileManager = FileManager.default
         
         var error:NSError? = nil
         
         // Get the documents directory path
-        let documentsDirectoryPath:NSURL = NSURL(fileURLWithPath:appDelegate.applicationDocumentsDirectory.path!)
+        let documentsDirectoryPath:URL = URL(fileURLWithPath:appDelegate.applicationDocumentsDirectory.path)
         
         do {
-            let directoryContents = try fileManager.contentsOfDirectoryAtPath(documentsDirectoryPath.path!)
+            let directoryContents = try fileManager.contentsOfDirectory(atPath: documentsDirectoryPath.path)
             
             if(nil == error){
                 
@@ -53,7 +53,7 @@ class VideoDataSource: NSObject {
                 
                 // Filter our the supported video files.
                 let predicate:NSPredicate = NSPredicate(format: "pathExtension IN %@", self.supportedVideoExtensions)
-                let videoFilePaths = (directoryContents as NSArray).filteredArrayUsingPredicate(predicate)//({predicate.evaluateWithObject($0)})
+                let videoFilePaths = (directoryContents as NSArray).filtered(using: predicate)//({predicate.evaluateWithObject($0)})
                 NSLog("Found video files %@", videoFilePaths)
                 
                 var videos:[Video] = []
@@ -63,7 +63,7 @@ class VideoDataSource: NSObject {
                     
                     let video = Video.create()
                     video.title = videoFilePath
-                    video.url = documentsDirectoryPath.URLByAppendingPathComponent(videoFilePath).path!
+                    video.url = documentsDirectoryPath.appendingPathComponent(videoFilePath).path
                     videos.append(video)
                 }
                 
@@ -81,6 +81,24 @@ class VideoDataSource: NSObject {
             
         }
         return nil
+    }
+    
+    
+    func loadVideosInBundle() -> [Video]?{
+        
+        var videos:[Video] = []
+        
+        if let videoUrls = Bundle.main.urls(forResourcesWithExtension: ".mp4", subdirectory: nil, localization: nil){
+            for videoUrl in videoUrls{
+                
+                let video = Video.create()
+                video.title = videoUrl.relativeString.removingPercentEncoding!
+                video.url = videoUrl.path
+                videos.append(video)
+            }
+        }
+        
+        return videos
     }
 }
 
@@ -100,8 +118,7 @@ extension VideoDataSource : DataSource{
         return 1
     }
     
-    
-    func numberOfObjectsForSection(section: Int) -> Int {
+    func numberOfObjectsForSection(_ section: Int) -> Int {
         var count = 0
         if let videos = self.videos{
             count = videos.count
@@ -109,22 +126,22 @@ extension VideoDataSource : DataSource{
         return count
     }
     
-    func objectAtIndexPath(indexPath: NSIndexPath) -> AnyObject?{
+    func objectAtIndexPath(_ indexPath: IndexPath) -> AnyObject?{
         if let videos = self.videos {
-            return videos[indexPath.row]
+            return videos[(indexPath as NSIndexPath).row]
         }
         
         return nil
     }
     
-    func indexPathOfObject(object: AnyObject) -> NSIndexPath {
+    func indexPathOfObject(_ object: AnyObject) -> IndexPath {
         
-        var indexPath = NSIndexPath(forRow: Foundation.NSNotFound, inSection: Foundation.NSNotFound)
+        var indexPath = IndexPath(row: Foundation.NSNotFound, section: Foundation.NSNotFound)
         
         if let videos = self.videos{
          
-            let index = videos.indexOf(object as! Video)
-            indexPath = NSIndexPath(forRow: index!, inSection: 0)
+            let index = videos.index(of: object as! Video)
+            indexPath = IndexPath(row: index!, section: 0)
             
         }
         

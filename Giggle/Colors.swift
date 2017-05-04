@@ -21,7 +21,7 @@ extension UIColor{
                         b: (Int)(arc4random() % 256));
     }
     
-    class func rgbColor(r: Int, g: Int, b: Int) -> UIColor{
+    class func rgbColor(_ r: Int, g: Int, b: Int) -> UIColor{
     
         let red:CGFloat = CGFloat(r);
         let green:CGFloat = CGFloat(g);
